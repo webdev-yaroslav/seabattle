@@ -1,2 +1,2 @@
 # SeeBattle
-https://webdev-yaroslav.github.io/seebattle/
+https://webdev-yaroslav.github.io/seabattle/
