@@ -52,7 +52,7 @@ const game = {
         }
 
         if (this.checkCollision(ship.location)) {
-            return this.generateOptionShip(shipSize)
+            return this.generateOptionsShip(shipSize)
         }
         
         this.addCollision(ship.location);
@@ -61,7 +61,7 @@ const game = {
     },
     checkCollision(location) {
         for (const coord of location) {
-            if (this.collision.has(coord)) {
+            if (this.collision.includes(coord)) {
                 return true;
             }
         }
@@ -72,8 +72,9 @@ const game = {
             for (let j = startCoordX; j < startCoordX + 3; j++) {
                 const startCoordY = location[i][1] - 1
                 for (let z = startCoordY; z < startCoordY + 3; z++) {
-                    if (j >= 0 && j < 10 && y >= 0 && z < 10){
+                    if (j >= 0 && j < 10 && z >= 0 && z < 10){
                         const coord = j + '' + z;
+
                         this.collision.add(coord);
                     }
                 }
@@ -170,9 +171,6 @@ const init = () => {
         play.record = 0;
         play.render();
     });
-
-    console.log(game);
-
 };
 
 init();
