@@ -52,7 +52,7 @@ const game = {
         }
 
         if (this.checkCollision(ship.location)) {
-            return this.generateOptionsShip(shipSize)
+            return this.generateOptionShip(shipSize)
         }
         
         this.addCollision(ship.location);
@@ -61,7 +61,7 @@ const game = {
     },
     checkCollision(location) {
         for (const coord of location) {
-            if (this.collision.includes(coord)) {
+            if (this.collision.has(coord)) {
                 return true;
             }
         }
